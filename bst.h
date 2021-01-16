@@ -9,9 +9,11 @@ typedef struct bst_node_ {
 } bst_node_t;
 
 typedef struct bst_ {
-    bst_node_t root;
+    bst_node_t *root;
 } bst_t;
 
-int insert(int data);		/* return 0 is successful insert, -1 if unsuccessful insert */
+bst_t* get_new_bst();				/* returns a pointer to a bst */
+int insert(bst_t *bst, int data);		/* return 0 is successful insert, -1 if unsuccessful insert */
+void print_bst(bst_t *bst);
 
 #endif
